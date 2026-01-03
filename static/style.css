@@ -1,0 +1,328 @@
+/* ============================= */
+/* Dark Essay Background */
+/* ============================= */
+
+body {
+  background: #111;
+  color: #e5e5e5;
+}
+
+
+.project-header {
+  max-width: 800px;
+  margin: 0 auto 60px;
+  text-align: center;
+  color: #eaeaea;
+}
+
+.project-header .subtitle {
+  color: #aaa;
+}
+
+.project-header .intro-text {
+  color: #ccc;
+}
+
+
+.subtitle {
+  color: #666;
+  font-size: 14px;
+  margin-top: 8px;
+}
+
+.description {
+  margin-top: 20px;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.gallery {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+/* DAS ist der entscheidende Teil */
+.gallery img {
+  width: 100%;
+  height: 280px;          /* feste Höhe */
+  object-fit: cover;     /* zuschneiden statt verzerren */
+  display: block;
+  background: #eee;
+}
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.95);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.lightbox img {
+  max-width: 90vw;
+  max-height: 90vh;
+  box-shadow: 0 0 0 12px #fff;
+}
+
+.lightbox .close {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  font-size: 32px;
+  cursor: pointer;
+  color: #111;
+}
+
+.gallery img {
+  cursor: zoom-in;
+}
+
+/* ============================= */
+/* Projekt-Kacheln (Startseite) */
+/* ============================= */
+
+.project-tile {
+  position: relative;
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.project-tile img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  display: block;
+
+  transition: filter 0.25s ease;
+}
+
+.project-tile:hover img {
+  filter: brightness(1.35) contrast(0.9);
+}
+
+/* Titel immer lesbar, subtil */
+.project-meta {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 16px;
+
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,0.55),
+    rgba(0,0,0,0)
+  );
+
+  color: #fff;
+  font-size: 16px;
+  letter-spacing: 1px;
+
+    transition: all 0.25s ease;
+
+  opacity: 1;
+}
+
+.project-tile:hover .project-meta {
+  font-size: 20px;
+  padding-bottom: 28px;
+  font-weight: 500;
+}
+
+@media (hover: none) {
+  .project-tile:hover img {
+    filter: none;
+  }
+
+  .project-tile:hover .project-meta {
+    font-size: 16px;
+    padding-bottom: 16px;
+  }
+}
+
+/* ============================= */
+/* Header / Navigation */
+/* ============================= */
+
+.header {
+  max-width: 1400px;
+  margin: 40px auto 60px;
+  padding: 0 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: lowercase;
+}
+
+nav a {
+  margin-left: 28px;
+  text-decoration: none;
+  font-size: 14px;
+  color: #ccc;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* ============================= */
+/* Startseite – Projekte */
+/* ============================= */
+
+.gallery.projects {
+  grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+  gap: 40px;
+}
+
+.project-cover img {
+  height: 420px;
+}
+
+/* ============================= */
+/* Startseiten Intro */
+/* ============================= */
+
+.intro {
+  max-width: 800px;
+  margin: 80px auto 60px;
+  padding: 0 40px;
+  text-align: center;
+}
+
+.intro h1 {
+  font-size: 32px;
+  font-weight: 400;
+  margin-bottom: 12px;
+}
+
+.intro p {
+  font-size: 15px;
+  color: #666;
+}
+
+/* ============================= */
+
+/* ============================= */
+/* Projekt – Scroll Essay */
+/* ============================= */
+
+.essay {
+  max-width: 900px;
+  margin: 0 auto 120px;
+  padding: 0 40px;
+}
+
+.essay-image {
+  margin: 0 0 80px;
+}
+
+.essay-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.project-header .intro-text {
+  margin-top: 32px;
+  font-size: 17px;
+  line-height: 1.7;
+  color: #333;
+  max-width: 680px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ============================= */
+/* Projekt Navigation */
+/* ============================= */
+
+.project-nav {
+  margin: 120px 0 0;
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: #ccc;
+  align-items: center;
+}
+
+.project-nav a {
+  text-decoration: none;
+  color: #ccc;
+  max-width: 40%;
+}
+
+.project-nav a:hover {
+  text-decoration: underline;
+  color: #fff;
+}
+
+.project-nav a:only-child {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.project-nav .prev {
+  text-align: left;
+}
+
+.project-nav .next {
+  text-align: right;
+}
+
+/* ============================= */
+/* Essay Bilder – White Frame */
+/* ============================= */
+
+.essay-image {
+  background: #fff;
+  padding: 24px;
+  margin: 0 auto 100px;
+  max-width: 900px;
+}
+
+.essay-image {
+  box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+}
+
+
+.essay-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.essay {
+  padding-top: 40px;
+}
+
+.footer {
+  margin-top: 120px;
+  padding: 40px 0 20px;
+  text-align: center;
+  font-size: 12px;
+  color: #666;
+}
+
+.footer p {
+  margin: 0;
+}
